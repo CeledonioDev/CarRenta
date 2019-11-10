@@ -36,76 +36,61 @@
     </environment>
 </head>
 <body>
-    <header class="simple-header for-sticky white">
-        <div class="menu">
-            <div class="container">
-                <div class="logo">
-                    <a href="#" title="">
-                        <i class="fa fa-get-pocket"></i>
-                        <span>CeleCars</span>
-                        <strong>RENTA VEHICULOS</strong>
-                    </a>
-                </div><!--LOGO-->
-                <div class="popup-client">
-                    <span><i class="fa fa-user"> / Signup</i></span>
-                </div>
-                <span class="menu-toggle">
-                    <i class="fa fa-bars"></i>
-                </span>
-                <nav>
-                    <h1 class="nocontent outline outline">--- Main Navigation ---</h1>
-                    <ul>
-                        <li class="menu-item-has-children"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                        <li class="menu-item-has-children mega">
-                            <a href="#" title="">PAGES</a>
+    <div class="preloader">
+        <div class="theme-layout">
+            <header class="simple-header for-sticky white">
+                <div class="menu">
+                    <div class="container">
+                        <div class="logo">
+                            <a href="#" title="">
+                                <i class="fa fa-get-pocket"></i>
+                                <span>CeleCars</span>
+                                <strong>RENTA VEHICULOS</strong>
+                            </a>
+                        </div><!--LOGO-->
+                        <div class="popup-client">
+                            <span><i class="fa fa-user"> / Signup</i></span>
+                        </div>
+                        <span class="menu-toggle">
+                            <i class="fa fa-bars"></i>
+                        </span>
+                        <nav>
+                            <h1 class="nocontent outline outline">--- Main Navigation ---</h1>
                             <ul>
-                                <li><a href="comingsoon.html" title="">Coming Soon</a></li>
-                                <li><a href="agents-listing.html" title="">Agent Listing </a></li>
-                                <li><a href="terms-conditions.html" title="">Terms & conditions</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Index">Inicio</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="About">Vehiculos</a></li>
+                                <li><a asp-area="" asp-controller="Home" asp-action="Contact">Adm Usuarios</a></li>
+                                <li class="menu-item-has-children mega">
+                                    <a href="#" title="">Reportes</a>
+                                    <ul>
+                                        <li><a href="comingsoon.html" title="">Inspección</a></li>
+                                        <li><a href="agents-listing.html" title="">Agent Listing </a></li>
+                                        <li><a href="terms-conditions.html" title="">Terms & conditions</a></li>
 
-                                <li><a href="agent.html" title="">Agent page</a></li>
-                                <li><a href="agent2.html" title="">Agent 2 page</a></li>
-                                <li><a href="agent3.html" title="">Agent 3 page</a></li>
+                                        <li><a href="agent.html" title="">Agent page</a></li>
+                                        <li><a href="agent2.html" title="">Agent 2 page</a></li>
+                                        <li><a href="agent3.html" title="">Agent 3 page</a></li>
 
-                                <li><a href="my-profile.html" title="">Profile page</a></li>
-                                <li><a href="submit.html" title="">Submit page</a></li>
-                                <li><a href="login.html" title="">Login page</a></li>
+                                        <li><a href="my-profile.html" title="">Profile page</a></li>
+                                        <li><a href="submit.html" title="">Submit page</a></li>
+                                        <li><a href="login.html" title="">Login page</a></li>
 
-                                <li><a href="contact.html" title="">Contact Us</a></li>
-                                <li><a href="404.html" title="">404 Error </a></li>
-                                <li><a href="faq.html" title="">FAQ page</a></li>
-                                <li><a href="faq.html" title="">VEHICUL LEFT SIDE</a></li>
+                                        <li><a href="contact.html" title="">Contact Us</a></li>
+                                        <li><a href="404.html" title="">404 Error </a></li>
+                                        <li><a href="faq.html" title="">FAQ page</a></li>
+                                        <li><a href="faq.html" title="">VEHICUL LEFT SIDE</a></li>
+                                    </ul>
+                                </li>
                             </ul>
-                        </li>
-                    </ul>
-                </nav>
+                        </nav>
 
-            </div>
+                    </div>
+                </div>
+            </header>
+
         </div>
-    </header>
+    </div>
 
-    @*<nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Rent.Web</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>*@
 
     <partial name="_CookieConsentPartial" />
 
@@ -141,3 +126,140 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+<script type="text/javascript" src="~/MyJavascript/js/modernizr.js"></script>
+@*<script type="text/javascript" src="~/MyJavascript/js/jquery-1.10.2.min.js"></script>*@
+@*<script type="text/javascript" src="~/MyJavascript/js/modernizr.js"></script>*@
+<script type="text/javascript" src="~/MyJavascript/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="~/MyJavascript/js/html5lightbox.js"></script>
+<script type="text/javascript" src="~/MyJavascript/js/scrolly.js"></script>
+<script type="text/javascript" src="~/MyJavascript/js/price-range.js"></script>
+<script type="text/javascript" src="~/MyJavascript/js/script.js"></script>
+<script type="text/javascript" src="~/MyJavascript/js/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="~/MyJavascript/js/rs-plugin/js/jquery.themepunch.revolution.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        "use strict";
+        jQuery('.tp-banner').show().revolution({
+            dottedOverlay: "none",
+            delay: 16000,
+            startwidth: 1170,
+            startheight: 700,
+            hideThumbs: 200,
+            thumbWidth: 100,
+            thumbHeight: 50,
+            thumbAmount: 5,
+            navigationType: "bullet",
+            navigationArrows: "solo",
+            navigationStyle: "preview1",
+            touchenabled: "on",
+            onHoverStop: "on",
+            swipe_velocity: 0.7,
+            swipe_min_touches: 1,
+            swipe_max_touches: 1,
+            drag_block_vertical: false,
+            parallax: "mouse",
+            parallaxBgFreeze: "on",
+            parallaxLevels: [7, 4, 3, 2, 5, 4, 3, 2, 1, 0],
+            keyboardNavigation: "off",
+            navigationHAlign: "center",
+            navigationVAlign: "bottom",
+            navigationHOffset: 0,
+            navigationVOffset: 20,
+            soloArrowLeftHalign: "left",
+            soloArrowLeftValign: "center",
+            soloArrowLeftHOffset: 20,
+            soloArrowLeftVOffset: 0,
+            soloArrowRightHalign: "right",
+            soloArrowRightValign: "center",
+            soloArrowRightHOffset: 20,
+            soloArrowRightVOffset: 0,
+            shadow: 0,
+            fullWidth: "on",
+            fullScreen: "off",
+            spinner: "spinner4",
+            stopLoop: "off",
+            stopAfterLoops: -1,
+            stopAtSlide: -1,
+            shuffle: "off",
+            autoHeight: "off",
+            forceFullWidth: "off",
+            hideThumbsOnMobile: "off",
+            hideNavDelayOnMobile: 1500,
+            hideBulletsOnMobile: "off",
+            hideArrowsOnMobile: "off",
+            hideThumbsUnderResolution: 0,
+            hideSliderAtLimit: 0,
+            hideCaptionAtLimit: 0,
+            hideAllCaptionAtLilmit: 0,
+            startWithSlide: 0,
+            videoJsPath: "rs-plugin/videojs/",
+            fullScreenOffsetContainer: ""
+        });
+
+        $(".carousel-prop").owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 3000,
+            smartSpeed: 2000,
+            loop: true,
+            dots: true,
+            nav: false,
+            items: 4,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                600: {
+                    items: 2,
+                    nav: false
+                },
+                1000: {
+                    items: 3,
+                    nav: true,
+                    loop: false
+                }
+            }
+        });
+
+        $(".carousel").owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 3000,
+            smartSpeed: 2000,
+            loop: false,
+            dots: false,
+            nav: true,
+            margin: 0,
+            items: 3
+        });
+
+        $(".carousel-client").owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 3000,
+            smartSpeed: 2000,
+            loop: false,
+            dots: false,
+            nav: true,
+            margin: 30,
+            items: 5,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true
+                },
+                600: {
+                    items: 3,
+                    nav: true
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: false
+                }
+            }
+        });
+
+    });
+
+</script>
