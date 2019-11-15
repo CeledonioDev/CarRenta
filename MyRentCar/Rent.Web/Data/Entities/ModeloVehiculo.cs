@@ -11,5 +11,7 @@ namespace Rent.Web.Data
 
         public string Marca { get; set; }
 
+        public Vehiculo Vehiculo { get; set; }
+
     }
 }
