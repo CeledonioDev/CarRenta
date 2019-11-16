@@ -1,0 +1,166 @@
+﻿@model Rent.Web.Data.Vehiculo
+
+@{
+    ViewData["Title"] = "CrearVehiculo";
+}
+
+
+<hr />
+<div class="row">
+    <div class="col-md-10 column">
+        <div class="heading4">
+            <h2>Crear Vehículos</h2>
+        </div>
+        <div class="submit-content">
+            <form class="vehicul-form" name="new_post" role="form">
+                <div class="control-group">
+                    <div class="group-title">Mantenimiento Vehículo &amp; Precio</div>
+                    <div class="group-container row">
+                        <div class="col-md-8">
+                            <div class="form-group s-prop-title">
+                                <label for="title">Nombre Vehículo&nbsp;&#42;</label>
+                                <input type="text" id="nombre" class="form-control" value="" name="Nombre" required="" />
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group s-prop-area">
+                                <label for="area">Price </label>
+                                <input type="text" id="area" class="form-control" value="" name="area">
+                            </div>
+                        </div>
+
+                        <div>
+
+                            <div class="col-md-4">
+                                <div class="form-group s-prop-status">
+                                    <label>Fabricante</label>
+                                    <div class="dropdown label-select">
+                                        <div class="label-select">
+                                            <select class="form-control" name="s_Manufacturer">
+                                                <option>Ninguno </option>
+                                                <option>Audi</option>
+                                                <option>Mercedes-Benz</option>
+                                                <option>BMW</option>
+                                                <option>Lexus</option>
+                                                <option>Lincoln</option>
+                                                <option>Ford</option>
+                                                <option>Fiat</option>
+                                                <option>Dodge</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group s-prop-status">
+                                    <label>Modelo</label>
+                                    <div class="dropdown label-select">
+                                        <div class="label-select">
+                                            <select class="form-control" name="s_model">
+                                                <option>Ningún Modelo </option>
+                                                <option value="1">R8</option>
+                                                <option value="2">S500</option>
+                                                <option value="3">540i</option>
+                                                <option value="4">RX300</option>
+                                                <option value="5">Navigator</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group s-prop-status">
+                                    <label>Ubicación</label>
+                                    <div class="dropdown label-select">
+                                        <div class="label-select">
+                                            <select class="form-control" name="s_locations">
+                                                <option>Ninguna Ubicación</option>
+                                                <option>Central New York</option>
+                                                <option>GreenVille</option>
+                                                <option>Long Island</option>
+                                                <option>New York City</option>
+                                                <option>West Side</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group s-prop-type">
+                                    <label>Estatus </label>
+                                    <div class="dropdown label-select">
+                                        <select class="form-control" name="s_statu">
+                                            <option>Ningún Estatus </option>
+                                            <option value="damaged">Damaged</option>
+                                            <option value="new">New</option>
+                                            <option value="semi-new">Semi-New</option>
+                                            <option value="used">Used</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group vehicul_field_years">
+                                    <label for="car_years">Año Vehículo </label>
+                                    <input type="text" id="car_years" name="vehicul_field[car_years]" class="form-control" value="">
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="form-group vehicul_field_Mileage">
+                                    <label for="car_years">Kilometraje </label>
+                                    <input type="text" id="car_Mileage" name="vehicul_field[car_Mileage]" class="form-control" value="">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group vehicul_field_Mileage">
+                                    <label for="car_years">Color </label>
+                                    <input type="text" id="Color" name="color" class="form-control" value="">
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group s-prop-desc">
+                                <label for="textarea">Descripción&nbsp;&#42;</label>
+                                <textarea id="textarea" name="desc" rows="10" required="" style="width: 100%;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <div class="group-title">Imagenes Vehiculos </div>
+                    <div class="group-container row">
+                        <div class="col-md-12">
+                            <div id="upload-container">
+                                <div id="aaiu-upload-container">
+                                    <div class="moxie-shim moxie-shim-html5">
+                                        <label for="input-upload" class="btn flat-btn btn-lg">Seleccionar Imagenes</label>
+                                        <input id="input-upload" type="file" multiple="" accept="image/jpeg,image/gif,image/png">
+                                    </div>
+                                    <p>Se requiere al menos 1 imagen para un envío válido. La imagen presentada se utilizará para mostrar en la página de listado de vehículos..</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit row pull-right" style="clear: both; margin-top: 25px;">
+                    <div class="col-md-12">
+                        <input type="submit" class="btn btn-lg flat-btn" id="vehicul_submit" value="Agregar Vehículo">
+                       @* <label style="margin-top: 15px; margin-left: 10px;">  Your submission will be reviewed by Administrator before it can be published</label>*@
+                    </div>
+                </div>
+            </form>
+    </div>
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
