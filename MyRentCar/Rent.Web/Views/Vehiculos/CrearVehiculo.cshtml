@@ -1,4 +1,4 @@
-﻿@model Rent.Web.Data.Vehiculo
+﻿@model Rent.Web.Models.VehiculoViewModel
 
 @{
     ViewData["Title"] = "CrearVehiculo";
@@ -12,7 +12,7 @@
             <h2>Crear Vehículos</h2>
         </div>
         <div class="submit-content">
-            <form class="vehicul-form" name="new_post" role="form">
+            <form class="vehicul-form" name="new_post">
                 <div class="control-group">
                     <div class="group-title">Mantenimiento Vehículo &amp; Precio</div>
                     <div class="group-container row">
@@ -33,20 +33,10 @@
 
                             <div class="col-md-4">
                                 <div class="form-group s-prop-status">
-                                    <label>Fabricante</label>
+                                    <label asp-for="TipoVehiculoId" class="control-label"></label>
                                     <div class="dropdown label-select">
                                         <div class="label-select">
-                                            <select class="form-control" name="s_Manufacturer">
-                                                <option>Ninguno </option>
-                                                <option>Audi</option>
-                                                <option>Mercedes-Benz</option>
-                                                <option>BMW</option>
-                                                <option>Lexus</option>
-                                                <option>Lincoln</option>
-                                                <option>Ford</option>
-                                                <option>Fiat</option>
-                                                <option>Dodge</option>
-                                            </select>
+                                            <select asp-for="TipoVehiculoId" asp-items="Model.Tipo" class="form-control"></select>
                                         </div>
                                     </div>
                                 </div>
@@ -54,17 +44,10 @@
 
                             <div class="col-md-4">
                                 <div class="form-group s-prop-status">
-                                    <label>Modelo</label>
+                                    <label asp-for="MarcaId" class="control-label"></label>
                                     <div class="dropdown label-select">
                                         <div class="label-select">
-                                            <select class="form-control" name="s_model">
-                                                <option>Ningún Modelo </option>
-                                                <option value="1">R8</option>
-                                                <option value="2">S500</option>
-                                                <option value="3">540i</option>
-                                                <option value="4">RX300</option>
-                                                <option value="5">Navigator</option>
-                                            </select>
+                                            <select asp-for="MarcaId" asp-items="Model.Marca" class="form-control"></select>                                         
                                         </div>
                                     </div>
                                 </div>

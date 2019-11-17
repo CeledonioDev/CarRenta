@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rent.Web.Data.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -24,6 +25,10 @@ namespace Rent.Web.Data
         public ICollection<TiposVehiculos> TiposVehiculos { get; set; }
 
         public ICollection<ModeloVehiculo> ModeloVehiculos { get; set; }
-        
+
+        public ICollection<VehiculoCaracteristica> vehiculoCaracteristicas { get; set; }
+
+        public ICollection<VehiculoPublicacion> vehiculoPublicacions { get; set; }
+
     }
 }
