@@ -47,7 +47,7 @@
                                     <label asp-for="MarcaId" class="control-label"></label>
                                     <div class="dropdown label-select">
                                         <div class="label-select">
-                                            <select asp-for="MarcaId" asp-items="Model.Marca" class="form-control"></select>                                         
+                                            <select asp-for="MarcaId" asp-items="Model.Marca" class="form-control"></select>
                                         </div>
                                     </div>
                                 </div>
@@ -134,16 +134,61 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="control-group">
+                    <div class="col-md-10">
+
+                        <p>Upload one or more files using this form:</p>
+
+                        <span>Select Files</span>
+
+                        <input type="file" id="file" name="selectFiles" class="upload" onchange="DisplayFilesToUpload()" multiple />
+
+                        <p id="FilesToUpload"></p>
+
+                    </div>
+
+                </div>
+
+                <div class="row" id="image_preview">
+
+                </div>
+
                 <div class="submit row pull-right" style="clear: both; margin-top: 25px;">
                     <div class="col-md-12">
                         <input type="submit" class="btn btn-lg flat-btn" id="vehicul_submit" value="Agregar Vehículo">
-                       @* <label style="margin-top: 15px; margin-left: 10px;">  Your submission will be reviewed by Administrator before it can be published</label>*@
+                        @* <label style="margin-top: 15px; margin-left: 10px;">  Your submission will be reviewed by Administrator before it can be published</label>*@
                     </div>
                 </div>
             </form>
+        </div>
     </div>
-</div>
 </div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+
+
 }
+
+<script type="text/javascript">
+    function DisplayFilesToUpload() {
+
+        var element = document.getElementById("file");
+
+        var html = "";
+
+        html = "<h3>Image(s) to Upload</h3>"
+
+        for (var i = 0; i < element.files.length; i++) {
+
+            var file = element.files[i];
+
+            if ('name' in file) { html += "<img src='" + URL.createObjectURL(event.target.files[i]) + "' width='388px' height='207px'>"; }
+
+        }
+
+        document.getElementById("FilesToUpload").innerHTML = html;
+
+    }
+</script>

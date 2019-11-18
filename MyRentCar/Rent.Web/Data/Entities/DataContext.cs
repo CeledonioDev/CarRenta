@@ -13,5 +13,11 @@ namespace Rent.Web.Data.Entities
         public DbSet<ModeloVehiculo> ModeloVehiculos { get; set; }
 
         public DbSet<Vehiculo> Vehiculos { get; set; }
+
+        public DbSet<MarcaVehiculo> MarcaVehiculos { get; set; }
+
+        public DbSet<VehiculoCaracteristica> VehiculoCaracteristicas { get; set; }
+
+        public DbSet<VehiculoPublicacion> vehiculoPublicacions { get; set; }
     }
 }
