@@ -1,9 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Rent.Web.Data.Entities;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Rent.Web.Data.Entities;
 
 namespace Rent.Web.Helpers
 {
@@ -16,18 +14,52 @@ namespace Rent.Web.Helpers
             _dataContext = dataContext;
         }
 
+        public IEnumerable<SelectListItem> GetComboCaracteristicaVehiculo()
+        {
+            var list = _dataContext.VehiculoCaracteristicas.Select(c => new SelectListItem
+            {
+                Text = c.Estatus,
+                Value = $"{c.Id}"
+            }).OrderBy(c => c.Text).ToList();
+
+            list.Insert(0, new SelectListItem
+            {
+                Text = "[Ninguna Estatus]",
+                Value = "0"
+            });
+
+            return list;
+        }
+
+        public IEnumerable<SelectListItem> GetComboMarcaVehiculo()
+        {
+            var list = _dataContext.MarcaVehiculos.Select(ma => new SelectListItem
+            {
+                Text = ma.Nombre,
+                Value = $"{ma.Id}"
+            }).OrderBy(ma => ma.Text).ToList();
+
+            list.Insert(0, new SelectListItem
+            {
+                Text = "[Ninguna Marca]",
+                Value = "0"
+            });
+
+            return list;
+        }
+
         public IEnumerable<SelectListItem> GetComboModeloVehiculo()
         {
             var list = _dataContext.ModeloVehiculos.Select(m => new SelectListItem
             {
                 Text = m.Marca,
                 Value = $"{m.Id}"
-            }).OrderBy(m=> m.Text).ToList();
+            }).OrderBy(m => m.Text).ToList();
 
             list.Insert(0, new SelectListItem
             {
                 Text = "[Ningún Modelo...]",
-                Value= "0"
+                Value = "0"
             });
             return list;
         }
@@ -45,7 +77,7 @@ namespace Rent.Web.Helpers
                 Text = "[Ningún Tipo...]",
                 Value = "0"
             });
-            return list; 
+            return list;
         }
     }
 }

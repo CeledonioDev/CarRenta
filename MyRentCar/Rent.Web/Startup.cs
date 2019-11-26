@@ -39,6 +39,7 @@ namespace Rent.Web
                 cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddScoped<IComboHelper, ComboHelper>();
+            services.AddScoped<IconvertHelper, ConvertHelper>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

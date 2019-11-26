@@ -1,271 +1,208 @@
-﻿@{
+﻿@model IEnumerable<Rent.Web.Data.Vehiculo>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-@*<div id="rev_slider-wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="classicslider1">
-    <div class="tp-banner-container">
-        <div class="tp-banner">
-            <ul>
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="2000"
-                    data-saveperformance="on" data-title="Ken Burns Slide">
-                    <!-- MAIN IMAGE -->
-                    <img src="~/MisImagenes/img/slides/home2.jpg" alt="2" data-lazyload="~/MisImagenes/img/slides/home2.jpg"
-                         data-bgposition="right top" data-kenburns="off" data-duration="12000"
-                         data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100"
-                         data-bgpositionend="center bottom">
-                    <div class="tp-caption tentered_white_huge lft tp-resizeme"
-                         data-endspeed="300" data-easing="Power4.easeOut" data-start="400" data-speed="600"
-                         data-y="130" data-hoffset="0" data-x="center"
-                         style="">
-                        <img alt="" src="~/MisImagenes/img/4.png" style="width: 110px; height: 110px;">
-                    </div>
-                    <div class="tp-caption tentered_white_huge lft tp-resizeme"
-                         data-endspeed="300" data-easing="Power4.easeOut" data-start="400" data-speed="600"
-                         data-y="272" data-hoffset="0" data-x="center"
-                         style="color: #fff; text-transform: uppercase; font-size: 40px; letter-spacing: 6px;
-                                 font-weight: 400;">
-                        Mercedes-Benz
-                    </div>
-                    <div class="tp-caption tentered_white_huge lfb tp-resizeme" data-endspeed="300"
-                         data-easing="Power4.easeOut" data-start="800" data-speed="600" data-y="320"
-                         data-hoffset="0" data-x="center"
-                         style="color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: 10px;">
-                        <i class="fa fa-map-marker"> </i> Not caroliana 234
-                    </div>
-                    <div class="tp-caption tentered_white_huge lft tp-resizeme"
-                         data-endspeed="300" data-easing="Power4.easeOut" data-start="400" data-speed="600"
-                         data-y="365" data-hoffset="0" data-x="center"
-                         style="color: #fff; text-transform: uppercase; font-size: 40px; letter-spacing: 6px;
-                                 font-family: Montserrat; font-weight: 400;">
-                        345000 $
-                    </div>
-                    <a href="vehicul.html" class="pull-left tp-caption lfb tp-resizeme rs-parallaxlevel-0"
-                       data-x="center"
-                       data-y="420"
-                       data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;
-                               scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                       data-speed="500"
-                       data-start="1200"
-                       data-easing="Power3.easeInOut"
-                       data-splitin="none"
-                       data-splitout="none"
-                       data-elementdelay="0.1"
-                       data-endelementdelay="0.1"
-                       data-linktoslide="next"
-                       style="z-index: 12; max-width: auto; max-height: auto; white-space: nowrap;padding:15px 28px;
-                               color: #fff;text-transform: uppercase;
-                               border: none; background:#000;
-                               font-size: 12px; letter-spacing: 3px;
-                               font-family: Montserrat; border-radius: 0px;
-                               display: table; transition: .4s;">More Details</a>
 
-                </li>
-
-
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="2000"
-                    data-saveperformance="on" data-title="Ken Burns Slide">
-                    <!-- MAIN IMAGE -->
-                    <img src="~/MisImagenes/img/slides/home1.jpg" alt="2" data-lazyload="~/MisImagenes/img/slides/home1.jpg"
-                         data-bgposition="right top" data-kenburns="off" data-duration="12000"
-                         data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100"
-                         data-bgpositionend="center bottom">
-                    <div class="tp-caption tentered_white_huge lft tp-resizeme"
-                         data-endspeed="300" data-easing="Power4.easeOut" data-start="400" data-speed="600"
-                         data-y="130" data-hoffset="0" data-x="center"
-                         style="">
-                        <img alt="" src="~/MisImagenes/img/2.png" style="width: 110px; height: 110px;">
-                    </div>
-                    <div class="tp-caption tentered_white_huge lft tp-resizeme"
-                         data-endspeed="300" data-easing="Power4.easeOut" data-start="400" data-speed="600"
-                         data-y="272" data-hoffset="0" data-x="center"
-                         style="color: #fff; text-transform: uppercase; font-size: 40px; letter-spacing: 6px;
-                                 font-weight: 400;">
-                        Mercedes-Benz
-                    </div>
-                    <div class="tp-caption tentered_white_huge lfb tp-resizeme" data-endspeed="300"
-                         data-easing="Power4.easeOut" data-start="800" data-speed="600" data-y="320"
-                         data-hoffset="0" data-x="center"
-                         style="color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: 10px;">
-                        <i class="fa fa-map-marker"> </i> Not caroliana 234
-                    </div>
-                    <div class="tp-caption tentered_white_huge lft tp-resizeme"
-                         data-endspeed="300" data-easing="Power4.easeOut" data-start="400" data-speed="600"
-                         data-y="365" data-hoffset="0" data-x="center"
-                         style="color: #fff; text-transform: uppercase; font-size: 40px; letter-spacing: 6px;
-                                 font-family: Montserrat; font-weight: 400;">
-                        345000 $
-                    </div>
-                    <a href="vehicul.html" class="pull-left tp-caption lfb tp-resizeme rs-parallaxlevel-0"
-                       data-x="center"
-                       data-y="420"
-                       data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;
-                               scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                       data-speed="500"
-                       data-start="1200"
-                       data-easing="Power3.easeInOut"
-                       data-splitin="none"
-                       data-splitout="none"
-                       data-elementdelay="0.1"
-                       data-endelementdelay="0.1"
-                       data-linktoslide="next"
-                       style="z-index: 12; max-width: auto; max-height: auto; white-space: nowrap;padding:15px 28px;
-                               color: #fff;text-transform: uppercase;
-                               border: none; background:#000;
-                               font-size: 12px; letter-spacing: 3px;
-                               font-family: Montserrat; border-radius: 0px;
-                               display: table; transition: .4s;">More Details</a>
-
-                </li>
-
-
-
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="2000"
-                    data-saveperformance="on" data-title="Ken Burns Slide">
-                    <!-- MAIN IMAGE -->
-                    <img src="~/MisImagenes/img/slides/home2.jpg" alt="2" data-lazyload="~/MisImagenes/img/slides/home2.jpg"
-                         data-bgposition="right top" data-kenburns="off" data-duration="12000"
-                         data-ease="Power0.easeInOut" data-bgfit="115" data-bgfitend="100"
-                         data-bgpositionend="center bottom">
-                    <div class="tp-caption tentered_white_huge lft tp-resizeme"
-                         data-endspeed="300" data-easing="Power4.easeOut" data-start="400" data-speed="600"
-                         data-y="130" data-hoffset="0" data-x="center"
-                         style="">
-                        <img alt="" src="~/MisImagenes/img/3.png" style="width: 110px; height: 110px;">
-                    </div>
-                    <div class="tp-caption tentered_white_huge lft tp-resizeme"
-                         data-endspeed="300" data-easing="Power4.easeOut" data-start="400" data-speed="600"
-                         data-y="272" data-hoffset="0" data-x="center"
-                         style="color: #fff; text-transform: uppercase; font-size: 40px; letter-spacing: 6px;
-                                 font-weight: 400;">
-                        Mercedes-Benz
-                    </div>
-                    <div class="tp-caption tentered_white_huge lfb tp-resizeme" data-endspeed="300"
-                         data-easing="Power4.easeOut" data-start="800" data-speed="600" data-y="320"
-                         data-hoffset="0" data-x="center"
-                         style="color: #fff; font-size: 13px; text-transform: uppercase; letter-spacing: 10px;">
-                        <i class="fa fa-map-marker"> </i> Not caroliana 234
-                    </div>
-                    <div class="tp-caption tentered_white_huge lft tp-resizeme"
-                         data-endspeed="300" data-easing="Power4.easeOut" data-start="400" data-speed="600"
-                         data-y="365" data-hoffset="0" data-x="center"
-                         style="color: #fff; text-transform: uppercase; font-size: 40px; letter-spacing: 6px;
-                                 font-family: Montserrat; font-weight: 400;">
-                        345000 $
-                    </div>
-                    <a href="vehicul.html" class="pull-left tp-caption lfb tp-resizeme rs-parallaxlevel-0"
-                       data-x="center"
-                       data-y="420"
-                       data-customin="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0;
-                               scaleY:0;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-                       data-speed="500"
-                       data-start="1200"
-                       data-easing="Power3.easeInOut"
-                       data-splitin="none"
-                       data-splitout="none"
-                       data-elementdelay="0.1"
-                       data-endelementdelay="0.1"
-                       data-linktoslide="next"
-                       style="z-index: 12; max-width: auto; max-height: auto; white-space: nowrap;padding:15px 28px;
-                               color: #fff;text-transform: uppercase;
-                               border: none; background:#000;
-                               font-size: 12px; letter-spacing: 3px;
-                               font-family: Montserrat; border-radius: 0px;
-                               display: table; transition: .4s;">More Details</a>
-
-                </li>
-            </ul>
-            <div class="tp-bannertimer"></div>
-        </div>
-    </div>
-</div>*@
-
-<section class="horizontal-search">
+<div class="block">
     <div class="container">
-        <h1 class="nocontent outline">--- Search form  ---</h1>
-        <div class="">
-            <div class="search-form">
-                <form action="vehiculs.html" method="get" class="form-inline">
-                    <div class="search-form-content">
-                        <div class="search-form-field">
-                            <div class="form-group col-xs-12 col-sm-3 col-md-3">
-                                <div class="label-select">
-                                    <select class="form-control" name="s_location">
-                                        <option>Any Manufacturer</option>
-                                        <option>Audi</option>
-                                        <option>Mercedes-Benz</option>
-                                        <option>BMW</option>
-                                        <option>Lexus</option>
-                                        <option>Lincoln</option>
-                                        <option>Ford</option>
-                                        <option>Fiat</option>
-                                        <option>Dodge</option>
-                                    </select>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-9 column">
+                        <div class="vehiculs-sec">
+                            <div class="vehiculs-list">
+                                <div class="filter-wrapper">
+                                    <ol class="list-option-filter">
+                                        <li>
+                                            <div class="option-filter-box">
+                                                <div class="label-select">
+                                                    <select class="form-control" name="s_statu">
+                                                        <option>Any Status </option>
+                                                        <option value="damaged">Damaged</option>
+                                                        <option value="new">New</option>
+                                                        <option value="semi-new">Semi-New</option>
+                                                        <option value="used">Used</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="option-filter-box">
+                                                <div class="label-select">
+                                                    <select class="form-control">
+                                                        <option value="">
+                                                            vehicul/page
+                                                        </option>
+                                                        <option value="4">
+                                                            4 vehiculs-/Page
+                                                        </option>
+                                                        <option value="8">
+                                                            8 vehiculs-/Page
+                                                        </option>
+                                                        <option value="12">
+                                                            12 vehiculs-/Page
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="sort-rates-lastest">
+                                            <div class="option-filter-box">
+                                                <span class="title">SORT BY:</span>
+                                                <a href="" class="sort-icon orderby" data-order=""
+                                                   data-sort="rating_score">
+                                                    Rating
+                                                </a> /
+                                                <a href="" class="sort-icon orderby active" data-order=""
+                                                   data-sort="date">
+                                                    Latest
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="icon-list-view">
+                                            <div class="option-filter-box">
+                                                <span class="icon-view grid-style active">
+                                                    <i class="fa fa-th"></i>
+                                                </span>
+                                                <span class="icon-view fullwidth-style">
+                                                    <i class="fa fa-th-list"></i>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="vehiculs-content">
+                                <div class="row">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="col-md-6 col-sm-8 col-xs-12">
+                                            <div class="vehiculs-box">
+                                                <div class="vehiculs-thumb">
+                                                    <img src="@Url.Content(item.ImagenUrl)" alt="" width="300" />
+                                                    <span class="spn-status"> Activo</span>
+                                                    <a class="proeprty-sh-more" href="vehicul.html">
+                                                        <i class="fa fa-angle-double-right"></i><i class="fa fa-angle-double-right"></i>
+                                                    </a>
+                                                    <p class="car-info-smal">
+                                                        Registration @Html.DisplayFor(modelItem => item.Anio_Vehiculo)<br>
+                                                        3.0 Diesel<br>
+                                                        230 HP<br>
+                                                        Body Coupe<br>
+                                                        @Html.DisplayFor(modelItem => item.Kilometraje) Miles
+                                                    </p>
+                                                </div>
+                                                <h3>
+                                                    @Html.DisplayFor(modelItem => item.NombreVehiculo)
+                                                </h3>
+                                                <span class="price">$@Html.DisplayFor(modelItem => item.Precio)</span>
+                                            </div>
+                                        </div>
+                                    }
+
                                 </div>
                             </div>
 
-                            <div class="form-group col-xs-12 col-sm-3 col-md-3">
-                                <div class="label-select">
-                                    <select class="form-control" name="anymodule">
-                                        <option>Any Model </option>
-                                        <option value="1">R8</option>
-                                        <option value="2">S500</option>
-                                        <option value="3">540i</option>
-                                        <option value="4">RX300</option>
-                                        <option value="5">Navigator</option>
-                                        <option value="6">Taurus</option>
-                                        <option value="7">Doblo</option>
-                                        <option value="8">Viper</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group col-xs-12 col-sm-3 col-md-3">
-                                <div class="label-select">
-                                    <select class="form-control" name="s_location">
-                                        <option>Any locations</option>
-                                        <option>Central New York</option>
-                                        <option>GreenVille</option>
-                                        <option>Long Island</option>
-                                        <option>New York City</option>
-                                        <option>West Side</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group col-xs-12 col-sm-3 col-md-3">
-                                <div class="label-select">
-                                    <select class="form-control" name="s_statu">
-                                        <option>Any Status </option>
-                                        <option value="damaged">Damaged</option>
-                                        <option value="new">New</option>
-                                        <option value="semi-new">Semi-New</option>
-                                        <option value="used">Used</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-group col-xs-12 col-sm-3 col-md-3">
-                            </div>
-                            <div class="form-group col-xs-12 col-sm-3 col-md-3">
-                                <span class="gprice-label">Price Range</span>
-                                <input type="text" class="span2" value="" data-slider-min="0"
-                                       data-slider-max="60000" data-slider-step="5"
-                                       data-slider-value="[0,60000]" id="price-range">
-                            </div>
-                            <div class="form-group col-xs-12 col-sm-3 col-md-3">
-                                <span class="garea-label">Mileage Range</span>
-                                <input type="text" class="span2" value="" data-slider-min="0"
-                                       data-slider-max="60000" data-slider-step="5"
-                                       data-slider-value="[50,60000]" id="vehicul-geo">
-                            </div>
                         </div>
                     </div>
-                    <div class="search-form-submit">
-                        <button type="submit" class="btn-search">Search</button>
-                    </div>
-                </form>
-            </div><!-- Services Sec -->
+                    <aside class="col-md-3 column">
+                        <div class="search_widget widget">
+                            <div class="heading2">
+                                <h3>Buscar Vehiculos</h3>
+                            </div>
+                            <div class="search-form">
+                                <form action="vehiculs.html" method="get" class="form-inline">
+                                    <div class="search-form-content">
+                                        <div class="search-form-field">
+                                            <div class="form-group col-md-12">
+                                                <div class="label-select">
+                                                    <select class="form-control" name="s_location">
+                                                        <option>Any Manufacturer</option>
+                                                        <option>Audi</option>
+                                                        <option>Mercedes-Benz</option>
+                                                        <option>BMW</option>
+                                                        <option>Lexus</option>
+                                                        <option>Lincoln</option>
+                                                        <option>Ford</option>
+                                                        <option>Fiat</option>
+                                                        <option>Dodge</option>
+                                                    </select>
+                                                </div>
+                                            </div>
 
+                                            <div class="form-group col-md-12">
+                                                <div class="label-select">
+                                                    <select class="form-control" name="anymodule">
+                                                        <option>Any Model </option>
+                                                        <option value="1">R8</option>
+                                                        <option value="2">S500</option>
+                                                        <option value="3">540i</option>
+                                                        <option value="4">RX300</option>
+                                                        <option value="5">Navigator</option>
+                                                        <option value="6">Taurus</option>
+                                                        <option value="7">Doblo</option>
+                                                        <option value="8">Viper</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-md-12">
+                                                <div class="label-select">
+                                                    <select class="form-control" name="s_location">
+                                                        <option>Any locations</option>
+                                                        <option>Central New York</option>
+                                                        <option>GreenVille</option>
+                                                        <option>Long Island</option>
+                                                        <option>New York City</option>
+                                                        <option>West Side</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group col-md-12">
+                                                <div class="label-select">
+                                                    <select class="form-control" name="s_statu">
+                                                        <option>Any Status </option>
+                                                        <option value="damaged">Damaged</option>
+                                                        <option value="new">New</option>
+                                                        <option value="semi-new">Semi-New</option>
+                                                        <option value="used">Used</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            @*<div class="form-group col-md-12">
+                                                    <span class="gprice-label">Price Range</span>
+                                                    <input type="text" class="span2" value="" data-slider-min="0"
+                                                           data-slider-max="60000" data-slider-step="5"
+                                                           data-slider-value="[0,60000]" id="price-range">
+                                                </div>
+                                                <div class="form-group col-md-12">
+                                                    <span class="garea-label">Mileage Range</span>
+                                                    <input type="text" class="span2" value="" data-slider-min="0"
+                                                           data-slider-max="60000" data-slider-step="5"
+                                                           data-slider-value="[50,60000]" id="vehicul-geo">
+                                                </div>*@
+                                        </div>
+                                    </div>
+                                    <div class="search-form-submit">
+                                        <button type="submit" class="btn-search">Search</button>
+                                    </div>
+                                </form>
+                            </div><!-- Services Sec -->
+                        </div><!-- Category Widget -->
+                    </aside>
+                </div>
+            </div>
         </div>
     </div>
-</section>
+</div>
+
+
+
+
+
+

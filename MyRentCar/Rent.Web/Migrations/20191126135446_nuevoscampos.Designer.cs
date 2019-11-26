@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Rent.Web.Data.Entities;
 
 namespace Rent.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191126135446_nuevoscampos")]
+    partial class nuevoscampos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,7 +30,11 @@ namespace Rent.Web.Migrations
                     b.Property<string>("Nombre")
                         .IsRequired();
 
+                    b.Property<int?>("VehiculoId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("VehiculoId");
 
                     b.ToTable("MarcaVehiculos");
                 });
@@ -42,7 +48,15 @@ namespace Rent.Web.Migrations
                     b.Property<string>("Estatus")
                         .IsRequired();
 
+                    b.Property<int?>("VehiculoId");
+
+                    b.Property<int?>("VehiculocaracteristicaId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("VehiculoId");
+
+                    b.HasIndex("VehiculocaracteristicaId");
 
                     b.ToTable("VehiculoCaracteristicas");
                 });
@@ -56,7 +70,11 @@ namespace Rent.Web.Migrations
                     b.Property<string>("Imagen")
                         .IsRequired();
 
+                    b.Property<int?>("VehiculoId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("VehiculoId");
 
                     b.ToTable("vehiculoPublicacions");
                 });
@@ -69,7 +87,11 @@ namespace Rent.Web.Migrations
 
                     b.Property<string>("Marca");
 
+                    b.Property<int?>("VehiculoId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("VehiculoId");
 
                     b.ToTable("ModeloVehiculos");
                 });
@@ -83,7 +105,11 @@ namespace Rent.Web.Migrations
                     b.Property<string>("Tipo")
                         .IsRequired();
 
+                    b.Property<int?>("VehiculoId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("VehiculoId");
 
                     b.ToTable("TiposVehiculos");
                 });
@@ -104,10 +130,6 @@ namespace Rent.Web.Migrations
 
                     b.Property<string>("Kilometraje");
 
-                    b.Property<int?>("MarcaVehiculosId");
-
-                    b.Property<int?>("ModeloVehiculosId");
-
                     b.Property<string>("NoPlaca");
 
                     b.Property<string>("No_Chasis");
@@ -116,48 +138,48 @@ namespace Rent.Web.Migrations
 
                     b.Property<double>("Precio");
 
-                    b.Property<int?>("TiposVehiculosId");
-
-                    b.Property<int?>("VehiculoCaracteristicasId");
-
-                    b.Property<int?>("VehiculoPublicacionsId");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("MarcaVehiculosId");
-
-                    b.HasIndex("ModeloVehiculosId");
-
-                    b.HasIndex("TiposVehiculosId");
-
-                    b.HasIndex("VehiculoCaracteristicasId");
-
-                    b.HasIndex("VehiculoPublicacionsId");
 
                     b.ToTable("Vehiculos");
                 });
 
-            modelBuilder.Entity("Rent.Web.Data.Vehiculo", b =>
+            modelBuilder.Entity("Rent.Web.Data.Entities.MarcaVehiculo", b =>
                 {
-                    b.HasOne("Rent.Web.Data.Entities.MarcaVehiculo", "MarcaVehiculos")
-                        .WithMany("vehiculos")
-                        .HasForeignKey("MarcaVehiculosId");
+                    b.HasOne("Rent.Web.Data.Vehiculo", "Vehiculo")
+                        .WithMany("marcaVehiculos")
+                        .HasForeignKey("VehiculoId");
+                });
 
-                    b.HasOne("Rent.Web.Data.ModeloVehiculo", "ModeloVehiculos")
-                        .WithMany("vehiculos")
-                        .HasForeignKey("ModeloVehiculosId");
+            modelBuilder.Entity("Rent.Web.Data.Entities.VehiculoCaracteristica", b =>
+                {
+                    b.HasOne("Rent.Web.Data.Vehiculo")
+                        .WithMany("vehiculoCaracteristicas")
+                        .HasForeignKey("VehiculoId");
 
-                    b.HasOne("Rent.Web.Data.TiposVehiculos", "TiposVehiculos")
-                        .WithMany("vehiculos")
-                        .HasForeignKey("TiposVehiculosId");
+                    b.HasOne("Rent.Web.Data.Entities.VehiculoCaracteristica", "Vehiculocaracteristica")
+                        .WithMany()
+                        .HasForeignKey("VehiculocaracteristicaId");
+                });
 
-                    b.HasOne("Rent.Web.Data.Entities.VehiculoCaracteristica", "VehiculoCaracteristicas")
-                        .WithMany("Vehiculos")
-                        .HasForeignKey("VehiculoCaracteristicasId");
+            modelBuilder.Entity("Rent.Web.Data.Entities.VehiculoPublicacion", b =>
+                {
+                    b.HasOne("Rent.Web.Data.Vehiculo", "Vehiculo")
+                        .WithMany("vehiculoPublicacions")
+                        .HasForeignKey("VehiculoId");
+                });
 
-                    b.HasOne("Rent.Web.Data.Entities.VehiculoPublicacion", "VehiculoPublicacions")
-                        .WithMany("Vehiculos")
-                        .HasForeignKey("VehiculoPublicacionsId");
+            modelBuilder.Entity("Rent.Web.Data.ModeloVehiculo", b =>
+                {
+                    b.HasOne("Rent.Web.Data.Vehiculo", "Vehiculo")
+                        .WithMany("ModeloVehiculos")
+                        .HasForeignKey("VehiculoId");
+                });
+
+            modelBuilder.Entity("Rent.Web.Data.TiposVehiculos", b =>
+                {
+                    b.HasOne("Rent.Web.Data.Vehiculo", "Vehiculo")
+                        .WithMany("TiposVehiculos")
+                        .HasForeignKey("VehiculoId");
                 });
 #pragma warning restore 612, 618
         }

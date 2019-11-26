@@ -13,5 +13,7 @@ namespace Rent.Web.Data.Entities
         [Required(ErrorMessage ="El campo {0} es obligatorio.")]
         [Display( Name = "Condición Vehículo")]
         public string Estatus { get; set; }
+
+        public ICollection<Vehiculo> Vehiculos { get; set; }
     }
 }

@@ -22,13 +22,31 @@ namespace Rent.Web.Data
 
         public string NoPlaca { get; set; }
 
-        public ICollection<TiposVehiculos> TiposVehiculos { get; set; }
+        public string ImagenUrl { get; set; }
 
-        public ICollection<ModeloVehiculo> ModeloVehiculos { get; set; }
+        public double Precio { get; set; }
 
-        public ICollection<VehiculoCaracteristica> vehiculoCaracteristicas { get; set; }
+        public string Descripcion { get; set; }
 
-        public ICollection<VehiculoPublicacion> vehiculoPublicacions { get; set; }
+        public TiposVehiculos TiposVehiculos { get; set; }
+
+        public ModeloVehiculo ModeloVehiculos { get; set; }
+
+        public VehiculoCaracteristica VehiculoCaracteristicas { get; set; }
+
+        public VehiculoPublicacion VehiculoPublicacions { get; set; }
+
+        public MarcaVehiculo MarcaVehiculos { get; set; }
+
+        //public ICollection<TiposVehiculos> TiposVehiculos { get; set; }
+
+        //public ICollection<ModeloVehiculo> ModeloVehiculos { get; set; }
+
+        //public ICollection<VehiculoCaracteristica> vehiculoCaracteristicas { get; set; }
+
+        //public ICollection<VehiculoPublicacion> vehiculoPublicacions { get; set; }
+
+        //public ICollection<MarcaVehiculo> marcaVehiculos { get; set; }
 
     }
 }

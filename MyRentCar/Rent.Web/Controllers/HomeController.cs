@@ -4,15 +4,29 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Rent.Web.Data.Entities;
+using Rent.Web.Helpers;
 using Rent.Web.Models;
 
 namespace Rent.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly DataContext _context;
+        private readonly IComboHelper _comboHelper;
+
+        public HomeController(
+            DataContext context,
+            IComboHelper comboHelper)
+        {
+            _context = context;
+            _comboHelper = comboHelper;
+        }
+
         public IActionResult Index()
         {
-            return View();
+
+            return View(_context.Vehiculos.ToList());
         }
 
         public IActionResult About()

@@ -11,5 +11,9 @@ namespace Rent.Web.Helpers
         IEnumerable<SelectListItem> GetComboModeloVehiculo();
 
         IEnumerable<SelectListItem> GetComboTipoVehiculo();
+
+        IEnumerable<SelectListItem> GetComboMarcaVehiculo();
+
+        IEnumerable<SelectListItem> GetComboCaracteristicaVehiculo();
     }
 }
